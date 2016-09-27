@@ -9,8 +9,8 @@ use phpcassa\SystemManager;
 use phpcassa\Index\IndexExpression;
 use phpcassa\Index\IndexClause;
 
-use cassandra\ConsistencyLevel;
-use cassandra\NotFoundException;
+use LegacyCassandra\ConsistencyLevel;
+use LegacyCassandra\NotFoundException;
 
 
 class ColumnFamilyTest extends PHPUnit_Framework_TestCase {
@@ -66,7 +66,7 @@ class ColumnFamilyTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_empty() {
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
         $this->cf->get(self::$KEYS[0]);
     }
 
@@ -656,7 +656,7 @@ class ColumnFamilyTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($this->cf->get(self::$KEYS[0]), $columns);
 
         $this->cf->remove(self::$KEYS[0]);
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
         $this->cf->get(self::$KEYS[0]);
     }
 }

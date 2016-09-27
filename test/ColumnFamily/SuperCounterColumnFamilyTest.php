@@ -5,7 +5,7 @@ use phpcassa\SystemManager;
 use phpcassa\SuperColumnFamily;
 use phpcassa\Schema\DataType;
 
-use cassandra\NotFoundException;
+use LegacyCassandra\NotFoundException;
 
 class TestSuperCounterColumnFamily extends PHPUnit_Framework_TestCase {
 
@@ -83,7 +83,7 @@ class TestSuperCounterColumnFamily extends PHPUnit_Framework_TestCase {
         $this->assertEquals($result, array("supercol" => array("col2" => 1)));
 
         $this->cf->remove_counter($key, "supercol");
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
         $result = $this->cf->get($key, null, array("supercol"));
     }
 

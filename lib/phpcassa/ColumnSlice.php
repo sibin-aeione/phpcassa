@@ -1,7 +1,7 @@
 <?php
 namespace phpcassa;
 
-use cassandra\SliceRange;
+use LegacyCassandra\SliceRange;
 
 /**
  * Represents a range of columns to slice from a row, multiple rows,

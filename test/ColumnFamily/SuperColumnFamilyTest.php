@@ -6,7 +6,7 @@ use phpcassa\SystemManager;
 use phpcassa\SuperColumnFamily;
 use phpcassa\Schema\DataType;
 
-use cassandra\NotFoundException;
+use LegacyCassandra\NotFoundException;
 
 class TestSuperColumnFamily extends PHPUnit_Framework_TestCase {
 
@@ -59,7 +59,7 @@ class TestSuperColumnFamily extends PHPUnit_Framework_TestCase {
         $columns = array(1 => array('sub1' => 'val1', 'sub2' => 'val2'),
                          2 => array('sub3' => 'val3', 'sub3' => 'val3'));
 
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
         $this->cf->get(self::$KEYS[0]);
 
         $this->cf->insert(self::$KEYS[0], $columns);
@@ -103,7 +103,7 @@ class TestSuperColumnFamily extends PHPUnit_Framework_TestCase {
             $this->cf->get_super_column(self::$KEYS[0], 1, null, $subcols),
             array('sub2' => 'val2'));
 
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
         $this->cf->get_super_column(self::$KEYS[0], 3);
     }
 

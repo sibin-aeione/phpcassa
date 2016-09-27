@@ -6,8 +6,8 @@ use Thrift\Transport\TFramedTransport;
 use Thrift\Transport\TBufferedTransport;
 use Thrift\Protocol\TBinaryProtocolAccelerated;
 
-use cassandra\CassandraClient;
-use cassandra\AuthenticationRequest;
+use LegacyCassandra\CassandraClient;
+use LegacyCassandra\AuthenticationRequest;
 
 /**
  * @internal

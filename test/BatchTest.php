@@ -72,7 +72,7 @@ class BatchTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_cf_mutator() {
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
 
         $batch = $this->cf->batch();
         $batch->insert("key1", array("col1" => "val1"));
@@ -102,7 +102,7 @@ class BatchTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_super_cf_mutator() {
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
 
         $batch = $this->super_cf->batch();
         $batch->insert("key1", array("super1" => array("col1" => "val1")));
@@ -135,7 +135,7 @@ class BatchTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_counter_cf_mutator() {
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
 
         $batch = $this->counter_cf->batch();
         $batch->insert("key1", array("col1" => 1));
@@ -166,7 +166,7 @@ class BatchTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_counter_super_cf_mutator() {
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
 
         $batch = $this->counter_super_cf->batch();
         $batch->insert("key1", array("super1" => array("col1" => 1)));

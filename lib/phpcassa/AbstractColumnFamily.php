@@ -15,21 +15,21 @@ use phpcassa\Batch\CfMutator;
 
 use phpcassa\Util\Clock;
 
-use cassandra\InvalidRequestException;
-use cassandra\NotFoundException;
+use LegacyCassandra\InvalidRequestException;
+use LegacyCassandra\NotFoundException;
 
-use cassandra\Mutation;
-use cassandra\Deletion;
-use cassandra\ConsistencyLevel;
-use cassandra\Column;
-use cassandra\ColumnParent;
-use cassandra\ColumnPath;
-use cassandra\ColumnOrSuperColumn;
-use cassandra\CounterColumn;
-use cassandra\IndexClause;
-use cassandra\IndexExpression;
-use cassandra\SlicePredicate;
-use cassandra\SliceRange;
+use LegacyCassandra\Mutation;
+use LegacyCassandra\Deletion;
+use LegacyCassandra\ConsistencyLevel;
+use LegacyCassandra\Column;
+use LegacyCassandra\ColumnParent;
+use LegacyCassandra\ColumnPath;
+use LegacyCassandra\ColumnOrSuperColumn;
+use LegacyCassandra\CounterColumn;
+use LegacyCassandra\IndexClause;
+use LegacyCassandra\IndexExpression;
+use LegacyCassandra\SlicePredicate;
+use LegacyCassandra\SliceRange;
 
 /**
  * Functions and constants used both in ColumnFamily and SuperColumnFamily
@@ -265,7 +265,7 @@ abstract class AbstractColumnFamily {
     public function set_autopack_keys($pack_keys) {
         if ($pack_keys) {
             $this->autopack_keys = true;
-            if (property_exists('\cassandra\CfDef', "key_validation_class")) {
+            if (property_exists('\LegacyCassandra\CfDef', "key_validation_class")) {
                 $this->key_type = DataType::get_type_for($this->cfdef->key_validation_class);
             } else {
                 $this->key_type = new BytesType();

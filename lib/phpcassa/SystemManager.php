@@ -4,10 +4,10 @@ namespace phpcassa;
 use phpcassa\Connection\ConnectionWrapper;
 use phpcassa\Schema\DataType;
 
-use cassandra\KsDef;
-use cassandra\CfDef;
-use cassandra\ColumnDef;
-use cassandra\IndexType;
+use LegacyCassandra\KsDef;
+use LegacyCassandra\CfDef;
+use LegacyCassandra\ColumnDef;
+use LegacyCassandra\IndexType;
 
 /**
  * Helps with getting information about the schema, making
@@ -279,7 +279,7 @@ class SystemManager {
      * @param string $data_type the data type of the values being indexed
      * @param string $index_name an optional name for the index
      * @param IndexType $index_type the type of index. Defaults to
-     *        \cassandra\IndexType::KEYS_INDEX, which is currently the only option.
+     *        \LegacyCassandra\IndexType::KEYS_INDEX, which is currently the only option.
      */
     public function create_index($keyspace, $column_family, $column,
         $data_type=self::KEEP, $index_name=NULL, $index_type=IndexType::KEYS)

@@ -10,7 +10,7 @@ use phpcassa\Index\IndexClause;
 
 use phpcassa\UUID;
 
-use cassandra\Column;
+use LegacyCassandra\Column;
 
 class ObjectFormatCFTest extends PHPUnit_Framework_TestCase {
 

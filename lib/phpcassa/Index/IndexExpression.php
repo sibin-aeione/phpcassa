@@ -1,14 +1,14 @@
 <?php
 namespace phpcassa\Index;
 
-use cassandra\IndexOperator;
+use LegacyCassandra\IndexOperator;
 
 use phpcassa\ColumnFamily;
 
 /**
  * @package phpcassa\Index
  */
-class IndexExpression extends \cassandra\IndexExpression {
+class IndexExpression extends \LegacyCassandra\IndexExpression {
 
     static protected $names_to_values = array(
         "EQ" => IndexOperator::EQ,

@@ -2,7 +2,7 @@
 namespace phpcassa\Iterator;
 
 use phpcassa\Schema\DataType\Serialized;
-use cassandra\KeyRange;
+use LegacyCassandra\KeyRange;
 
 /**
  * Iterates over a column family row-by-row, typically with only a subset

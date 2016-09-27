@@ -85,7 +85,7 @@ class AutopackKeysTest extends AutopackBase {
         $this->cf->insert(123, array("foo" => "bar"));
         $this->assertEquals(array("foo" => "bar"), $this->cf->get(123));
         $this->cf->remove(123);
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
         $this->cf->get(123);
     }
 
@@ -94,7 +94,7 @@ class AutopackKeysTest extends AutopackBase {
         $this->uuid_cf->insert($uuid, array("foo" => "bar"));
         $this->assertEquals(array("foo" => "bar"), $this->uuid_cf->get($uuid));
         $this->uuid_cf->remove($uuid);
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
         $this->uuid_cf->get($uuid);
     }
 

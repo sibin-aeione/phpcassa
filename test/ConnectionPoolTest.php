@@ -8,8 +8,8 @@ use phpcassa\Connection\NoServerAvailable;
 use phpcassa\ColumnFamily;
 use phpcassa\SystemManager;
 
-use cassandra\TimedOutException;
-use cassandra\CassandraClient;
+use LegacyCassandra\TimedOutException;
+use LegacyCassandra\CassandraClient;
 
 class MockClient extends CassandraClient {
 

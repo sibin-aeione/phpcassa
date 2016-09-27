@@ -1,8 +1,8 @@
 <?php
 namespace phpcassa;
 
-use cassandra\ConsistencyLevel;
-use cassandra\CounterColumn;
+use LegacyCassandra\ConsistencyLevel;
+use LegacyCassandra\CounterColumn;
 
 /**
  * Representation of a column family in Cassandra.

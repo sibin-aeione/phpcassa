@@ -5,7 +5,7 @@ use phpcassa\SystemManager;
 use phpcassa\ColumnFamily;
 use phpcassa\Schema\DataType;
 
-use cassandra\NotFoundException;
+use LegacyCassandra\NotFoundException;
 
 class TestCounterColumnFamily extends PHPUnit_Framework_TestCase {
 
@@ -73,7 +73,7 @@ class TestCounterColumnFamily extends PHPUnit_Framework_TestCase {
         $this->assertEquals($result, array("col" => 1));
 
         $this->cf->remove_counter($key, "col");
-        $this->setExpectedException('\cassandra\NotFoundException');
+        $this->setExpectedException('\LegacyCassandra\NotFoundException');
         $result = $this->cf->get($key, null, array("col"));
     }
 }
