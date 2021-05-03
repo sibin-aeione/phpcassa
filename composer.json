@@ -1,5 +1,5 @@
 {
-    "name": "thobbs/phpcassa",
+    "name": "sibin-aeione/phpcassa",
     "description": "PHP Cassandra Library",
     "keywords": ["Cassandra"],
     "type": "library",
